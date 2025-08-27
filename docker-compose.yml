@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    volumes:           
+      - ./data:/data            # Mount a host folder for SQLite database
+    environment:
+      - DATABASE_URL=sqlite:////data/mydb.sqlite
+    ports:
+      - "5000:5000"

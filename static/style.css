@@ -1,0 +1,99 @@
+/* Reset some default styling */
+body, h1, ul, li, form {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Add note form */
+.note-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.note-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.note-form button {
+    padding: 10px 15px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.note-form button:hover {
+    background: #45a049;
+}
+
+/* Notes list */
+.notes-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.notes-list li {
+    background: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    text-decoration: none;
+    color: red;
+    font-size: 18px;
+}
+
+/* Clear button */
+.clear-form {
+    text-align: center;
+}
+
+.clear-btn {
+    padding: 10px 20px;
+    background: #e74c3c;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear-btn:hover {
+    background: #c0392b;
+}

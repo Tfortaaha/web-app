@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>My Notes</h1>
+
+        <!-- Form to add a new note -->
+        <form action="{{ url_for('add') }}" method="post" class="note-form">
+            <input type="text" name="note" placeholder="Enter a note" required>
+            <button type="submit">Add</button>
+        </form>
+
+        <!-- Notes List -->
+        <ul class="notes-list">
+            {% for note in notes %}
+                <li>
+                    <span>{{ note.text }}</span>
+                    <a href="{{ url_for('delete', note_id=note.id) }}" class="delete-btn">❌</a>
+                </li>
+            {% else %}
+                <li>No notes yet!</li>
+            {% endfor %}
+        </ul>
+
+        <!-- Clear All Form -->
+        <form action="{{ url_for('clear') }}" method="post" class="clear-form">
+            <button type="submit" class="clear-btn">Clear All</button>
+        </form>
+    </div>
+</body>
+</html>
