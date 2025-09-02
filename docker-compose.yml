@@ -3,7 +3,12 @@ services:
     build: .
     volumes:           
       - ./data:/data            # Mount a host folder for SQLite database
+      - .:/app
     environment:
       - DATABASE_URL=sqlite:////data/mydb.sqlite
     ports:
       - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    command: flask run --host=0.0.0.0 --port=5000 --reload
